@@ -1,0 +1,48 @@
+<div class="slide"><img src="https://picsum.photos/800/300?3" width="100%"></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<input placeholder="Tên"><br><br>
+<input placeholder="Email"><br><br>
+<button class="btn">Gửi</button>
+</section>
+
+<footer>© 2026 Pro Website</footer>
+
+<script>
+
+/* LOADING */
+window.onload=()=>{
+    document.getElementById("loader").style.display="none";
+}
+
+/* DARK MODE */
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+/* SCROLL ANIMATION */
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+    let trigger=window.innerHeight*0.85;
+    cards.forEach(c=>{
+        if(c.getBoundingClientRect().top<trigger){
+            c.classList.add('show');
+        }
+    });
+});
+
+/* SLIDER AUTO */
+let index=0;
+setInterval(()=>{
+    index++;
+    if(index>2) index=0;
+    document.getElementById("slider").style.transform=`translateX(-${index*100}%)`;
+},3000);
+
+</script>
+
+</body>
+</html>
